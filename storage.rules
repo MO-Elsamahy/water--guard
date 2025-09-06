@@ -1,0 +1,24 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isSignedIn() { return request.auth != null; }
+
+    // Publicly readable images
+    match /news/{fileName} {
+      allow read: if true;
+      allow write: if request.auth.token.admin == true;
+    }
+
+    match /reports/{fileName} {
+      allow read: if true; // or limit to approved if using metadata
+      allow write: if isSignedIn();
+    }
+
+    match /plumbers/{uid}/{fileName} {
+      allow read: if true;
+      allow write: if isSignedIn() && request.auth.uid == uid;
+    }
+  }
+}
+
+

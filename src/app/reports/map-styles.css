@@ -1,0 +1,101 @@
+/* إصلاحات CSS للخريطة */
+.leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+  z-index: 1 !important;
+  background: #f8f9fa !important;
+  transition: filter 0.3s ease !important;
+}
+
+/* Dark mode للخريطة */
+.dark .leaflet-container {
+  filter: hue-rotate(180deg) invert(1) brightness(0.8) contrast(1.2) !important;
+}
+
+/* إعادة تعيين الألوان للعناصر المهمة في Dark Mode */
+.dark .leaflet-popup-content-wrapper {
+  filter: hue-rotate(180deg) invert(1) !important;
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .leaflet-popup-tip {
+  filter: hue-rotate(180deg) invert(1) !important;
+  background: #1e293b !important;
+}
+
+.dark .custom-report-marker,
+.dark .custom-new-location-marker {
+  filter: hue-rotate(180deg) invert(1) !important;
+}
+
+.leaflet-control-container {
+  font-family: 'Cairo', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+  font-family: 'Cairo', sans-serif !important;
+  direction: rtl !important;
+}
+
+.leaflet-popup-content {
+  margin: 8px 12px !important;
+  line-height: 1.4 !important;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+.custom-report-marker {
+  border: none !important;
+  background: transparent !important;
+}
+
+.custom-new-location-marker {
+  border: none !important;
+  background: transparent !important;
+}
+
+/* تحسين الأزرار */
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: white !important;
+  color: #374151 !important;
+  border: 1px solid #d1d5db !important;
+  font-weight: bold !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #f3f4f6 !important;
+  color: #1f2937 !important;
+}
+
+/* تحسين Attribution */
+.leaflet-control-attribution {
+  background-color: rgba(255,255,255,0.8) !important;
+  font-size: 10px !important;
+  padding: 2px 4px !important;
+}
+
+/* إصلاح مشكلة الأيقونات المفقودة */
+.leaflet-default-icon-path {
+  background-image: url('https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png');
+}
+
+/* تحسين الاستجابة للهواتف المحمولة */
+@media (max-width: 768px) {
+  .leaflet-control-zoom {
+    margin-left: 5px !important;
+    margin-top: 5px !important;
+  }
+  
+  .leaflet-popup-content-wrapper {
+    max-width: 250px !important;
+  }
+}

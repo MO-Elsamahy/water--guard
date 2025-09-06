@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "water-guard",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": "https://flglpwakqsbnmktlatal.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZsZ2xwd2FrcXNibm1rdGxhdGFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4NDk0MTEsImV4cCI6MjA3MjQyNTQxMX0.e_-4ksJl_Fj-NCGl_e5przzHOR6i8x14QeUimwZ4oQ4"
+  }
+}
